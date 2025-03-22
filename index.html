@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Amal & Anuja Wedding Invitation</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        section {
+            min-height: 100vh;
+            //display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding: 40px;
+            position: relative;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent background to blend with content */
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); /* Soft shadow for a lifted effect */
+            overflow: hidden; /* Ensure border styles don't affect content */
+        }
+
+        .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    animation: fade 15s infinite; /* Adjusted timing */
+			}
+
+			.carousel img:nth-child(1) {
+				animation-delay: 0s; /* Ensure the first image starts immediately */
+			}
+
+			.carousel img:nth-child(2) {
+				animation-delay: 3s; /* Adjusted delay for the second image */
+			}
+
+			.carousel img:nth-child(3) {
+				animation-delay: 6s; /* Adjusted delay for the third image */
+			}
+
+			.carousel img:nth-child(4) {
+				animation-delay: 9s; /* Adjusted delay for the fourth image */
+			}
+
+			.carousel img:nth-child(5) {
+				animation-delay: 12s; /* Adjusted delay for the fifth image */
+			}
+
+			@keyframes fade {
+				0%, 20% { opacity: 1; } /* Show the image for 20% of the animation duration */
+				25%, 95% { opacity: 0; } /* Fade out the image */
+				100% { opacity: 1; } /* Ensure the last image fades back in */
+			}
+        .content {
+            position: relative;
+            padding: 20px;
+            border-radius: 10px;
+            z-index: 1;
+            max-width: 90%;
+            margin: auto;
+        }
+
+        .content h1 {
+            font-size: 3rem;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        .content h2 {
+            font-size: 2rem;
+            margin: 10px 0;
+        }
+
+        .content p {
+            font-size: 1rem;
+            margin: 20px 0;
+        }
+
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin-top: 20px;
+            font-size: 1.5rem;
+            flex-wrap: nowrap;
+        }
+
+        .countdown div {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px;
+            border-radius: 5px;
+            min-width: 60px;
+        }
+
+        .navigation {
+            margin-top: 20px;
+            display: none;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .navigation .arrow {
+            font-size: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        .navigation .arrow:hover {
+            color: rgba(255, 255, 255, 1);
+        }
+
+        /* Second Page Styling */
+        .second-page .image-container {
+            margin-bottom: 20px;
+            width: 200px;
+            height: 120px; /* Aspect ratio for oval shape */
+            border-radius: 50%;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .second-page .image-container img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+			max-height: 250px;
+        }
+
+        .second-page p {
+            font-size: 1.2rem;
+        }
+
+        .second-page .signature {
+            margin-top: 45px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 2rem;
+        }
+
+        /* Maps Container Styling */
+        .maps-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .map {
+            width: 100%;
+            height: 300px;
+            border-radius: 10px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .content h1 {
+                font-size: 2.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.8rem;
+            }
+
+            .countdown {
+                font-size: 1.2rem;
+            }
+
+            .second-page .image-container {
+                width: 150px;
+                height: auto;
+            }
+
+            .maps-container {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 45px 22px;
+            }
+
+            .content {
+                padding: 20px;
+                max-width: 100%;
+            }
+
+            .content h1 {
+                font-size: 2rem;
+            }
+
+            .content h2 {
+                font-size: 1.5rem;
+            }
+
+            .second-page .image-container {
+                width: 100%;
+                height: auto;
+            }
+
+            .maps-container {
+                gap: 15px;
+            }
+
+            .countdown {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .content h1 {
+                font-size: 1.5rem;
+            }
+
+            .content h2 {
+                font-size: 1.2rem;
+            }
+
+            .second-page p, .third-page h2 {
+                font-size: 1rem;
+            }
+
+            .countdown {
+                font-size: 0.8rem;
+            }
+
+            .map {
+                height: 250px;
+            }
+        }
+		.invite_text {
+		      padding-top: 60px;
+		}
+    </style>
+</head>
+<body>
+    <!-- First Section -->
+    <section id="firstPage">
+        <div class="carousel">
+            <img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01021.jpg" alt="Background Image 1">
+            <img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01581.jpg" alt="Background Image 2">
+            <img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01042.jpg" alt="Background Image 3">
+			<img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01492.jpg" alt="Background Image 4">
+            <img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01144.jpg" alt="Background Image 5">
+        </div>
+        <div class="content">
+            <h1>AMAL & ANUJA</h1>
+            <h2>We Are Getting Married</h2>
+            <p>10 NOVEMBER 2024</p>
+            <p>09:00 to 11:00 | Vaikkarakavu Sree Bhagavathi Temple | Odakkali</p>
+            <div class="countdown">
+                <div><span id="days">00</span> <br> DAYS</div>
+                <div><span id="hours">00</span> <br> HRS</div>
+                <div><span id="minutes">00</span> <br> MIN</div>
+                <div><span id="seconds">00</span> <br> SEC</div>
+            </div>
+            <div class="navigation">
+                <a href="#secondPage" class="arrow">▼</a> <!-- Thick down arrow -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Second Section -->
+    <section id="secondPage" style="background: url('https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/weddd.jpg') no-repeat center center/cover;">
+        <div class="content second-page">
+            <div class="image-container">
+                <img src="https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/SAT01212_wed.jpg" alt="Profile Image">
+            </div>
+			<div class="invite_text">
+            <p>We, Amal and Anuja, joyfully invite you to celebrate the beginning of our life together on Sunday, November 10th, 2024.</p>
+            <p>Your blessings and presence with your family on this special occasion would be truly cherished as we celebrate our marriage.</p>
+            <div class="signature">
+                Sincerely,<br>
+                <strong>Amal & Anuja</strong>
+            </div>
+			</div>
+            <div class="navigation">
+                <a href="#firstPage" class="arrow">▲</a> <!-- Thick up arrow -->
+                <a href="#thirdPage" class="arrow">▼</a> <!-- Thick down arrow -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Third Section: Google Maps Previews -->
+    <section id="thirdPage" class="third-page" style="background: url('https://raw.githubusercontent.com/akhilambaady/wed_card/main/images/weddd.jpg') no-repeat center center/cover;">
+        <div class="content">
+            <h2>Wedding & Reception Locations</h2>
+            <div class="maps-container">
+                <!-- Wedding Location -->
+                <div>
+                    <h3>Wedding Location</h3>
+					<div style="position: relative; width: 100%; height: 100%;">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3819.077123528982!2d76.31591781420628!3d10.036075592917052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07c08b8d2d5b73%3A0x8a8e4a2a256f9c54!2sMhgWxe3WAkdb9Ep17!5e0!3m2!1sen!2sin!4v1628217241461!5m2!1sen!2sin"
+							class="map"
+							allowfullscreen=""
+							loading="lazy"
+							style="border:0; width: 100%; height: 300px;">
+						</iframe>
+						<a href="https://www.google.com/maps/place/Vaikarakkavu+Devi+Temple/@10.066964,76.4293916,12z/data=!4m6!3m5!1s0x3b07e38d24eaaaab:0xacf99271338f76b!8m2!3d10.0942077!4d76.5395205!16s%2Fg%2F11tgg7pkwm?entry=ttu" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
+					</div>
+                </div>
+                <!-- Reception Location -->
+                <div>
+                    <h3>Reception Location</h3>
+                    <div style="position: relative; width: 100%; height: 100%;">
+						<iframe
+							src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3919.669049337681!2d76.4800546!3d10.0862454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b07e23e1e98f55f%3A0x2c10125cdf410987!2sSt+Mary's+Indoor+Stadium+%26+Auditorium!5e0!3m2!1sen!2sin!4v1628217039461!5m2!1sen!2sin"
+							class="map"
+							allowfullscreen=""
+							loading="lazy"
+							style="border:0; width: 100%; height: 300px;">
+						</iframe>
+						<a href="https://www.google.com/maps/place/St+Mary's+Indoor+Stadium+%26+Auditorium/@10.0862454,76.4800546,17z/data=!3m1!4b1!4m6!3m5!1s0x3b07e23e1e98f55f:0x2c10125cdf410987!8m2!3d10.0862454!4d76.4800546!16s%2Fg%2F1hdzps7n4?entry=ttu" target="_blank" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1;"></a>
+					</div>
+                </div>
+            </div>
+            <!--<div class="navigation">
+                <a href="#secondPage" class="arrow">▲</a> 
+            </div>-->
+        </div>
+    </section>
+
+    <script>
+        function updateCountdown() {
+            const weddingDate = new Date("November 11, 2024 13:00:00").getTime();
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById('days').textContent = days;
+            document.getElementById('hours').textContent = hours;
+            document.getElementById('minutes').textContent = minutes;
+            document.getElementById('seconds').textContent = seconds;
+
+            if (distance < 0) {
+                clearInterval(interval);
+                document.querySelector('.countdown').textContent = "The Wedding Has Happened!";
+            }
+        }
+
+        const interval = setInterval(updateCountdown, 1000);
+    </script>
+</body>
+</html>
