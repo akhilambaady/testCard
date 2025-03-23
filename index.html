@@ -276,7 +276,7 @@
     </style>
 </head>
 <body>
-<i id="speaker-icon" class="fas fa-volume-up speaker-icon"></i>
+<i id="speaker-icon" class="fas fa-volume-mute speaker-icon"></i>
 <audio id="bg-music" loop>
     <source src="https://akhilambaady.github.io/testCard/music/Ranjah1.mp3" type="audio/mpeg">
 </audio>
@@ -404,17 +404,17 @@
 	document.addEventListener("click", (event) => {
 	    // Check if the clicked element OR its parent is the speaker icon
 	    if (event.target.id === "speaker-icon" || event.target.closest("#speaker-icon")) {
-	        console.log("Speaker icon clicked!");
+	        //console.log("Speaker icon clicked!");
 	
 	        // Toggle audio play/pause
 	        if (audio.paused) {
 	            audio.play().then(() => {
-				console.log("U r here icon clicked!",speakerIcon.classList);
+				//console.log("U r here icon clicked!",speakerIcon.classList);
 	                speakerIcon.classList.remove("fa-volume-mute");
 	                speakerIcon.classList.add("fa-volume-up");
 	            }).catch(err => console.log("Playback blocked:", err));
 	        } else {
-			console.log("U r here 2123333 icon clicked!",speakerIcon.classList);
+			//console.log("U r here 2123333 icon clicked!",speakerIcon.classList);
 	            audio.pause();
 	            speakerIcon.classList.remove("fa-volume-up");
 	            speakerIcon.classList.add("fa-volume-mute");
