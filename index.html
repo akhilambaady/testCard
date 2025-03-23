@@ -263,9 +263,20 @@
 	    font-family: monospace;
 	    font-weight: bold;
         }
+	.speaker-icon {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            color: white;
+            cursor: pointer;
+            z-index: 1000;
+            transition: color 0.3s ease;
+        }
     </style>
 </head>
 <body>
+<i id="speaker-icon" class="fas fa-volume-up speaker-icon"></i>
 <audio id="bg-music" loop>
     <source src="https://akhilambaady.github.io/testCard/music/Ranjah1.mp3" type="audio/mpeg">
 </audio>
@@ -387,12 +398,29 @@
 
         const interval = setInterval(updateCountdown, 1000);
 
-   document.addEventListener("click", function() {
-    let audio = document.getElementById("bg-music");
-    if (audio.paused) {
-        audio.play();
-    }
-    });
+   	const audio = document.getElementById("bg-music"); // Define audio globally
+	const speakerIcon = document.getElementById("speaker-icon");
+	
+	document.addEventListener("click", (event) => {
+	    // Check if the clicked element OR its parent is the speaker icon
+	    if (event.target.id === "speaker-icon" || event.target.closest("#speaker-icon")) {
+	        console.log("Speaker icon clicked!");
+	
+	        // Toggle audio play/pause
+	        if (audio.paused) {
+	            audio.play().then(() => {
+				console.log("U r here icon clicked!",speakerIcon.classList);
+	                speakerIcon.classList.remove("fa-volume-mute");
+	                speakerIcon.classList.add("fa-volume-up");
+	            }).catch(err => console.log("Playback blocked:", err));
+	        } else {
+			console.log("U r here 2123333 icon clicked!",speakerIcon.classList);
+	            audio.pause();
+	            speakerIcon.classList.remove("fa-volume-up");
+	            speakerIcon.classList.add("fa-volume-mute");
+	        }
+	    }
+	});
     </script>
 </body>
 </html>
