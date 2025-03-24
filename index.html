@@ -422,6 +422,14 @@
 	        }
 	    }
 	});
+	// Pause audio when tab is hidden
+	document.addEventListener("visibilitychange", () => {
+	    if (document.hidden) {
+	        audio.pause();
+	        speakerIcon.classList.remove("fa-volume-up");
+	        speakerIcon.classList.add("fa-volume-mute");
+	    }
+	});
     </script>
 </body>
 </html>
